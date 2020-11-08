@@ -60,7 +60,10 @@ export default function Products() {
               </Typography>
             </CardContent>
             <CardActions>
-              <AddProductToCart product={product}/>
+              {(product.count && product.count > 0)
+                ? <AddProductToCart product={product}/>
+                : "Out of stock"
+              }
             </CardActions>
           </Card>
         </Grid>
